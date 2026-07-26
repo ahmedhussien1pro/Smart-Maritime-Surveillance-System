@@ -15,6 +15,7 @@ const char* ssid = "YOUR_WIFI_SSID";
 const char* password = "YOUR_WIFI_PASSWORD";
 const char* serverUrl = "http://192.168.1.50:4000/api/telemetry";
 
+
 // Pin Definitions
 #define MOTOR_PWM_PIN 25
 #define SERVO_PIN     26
