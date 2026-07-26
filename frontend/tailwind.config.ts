@@ -10,6 +10,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        
         // Military Dark Theme
         navy: {
           950: '#060d14',
