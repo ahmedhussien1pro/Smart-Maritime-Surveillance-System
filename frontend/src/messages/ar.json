@@ -1,0 +1,121 @@
+{
+  "nav": {
+    "dashboard": "لوحة القيادة",
+    "mission": "إعداد المهمة",
+    "logs": "سجل الأحداث",
+    "settings": "الإعدادات"
+  },
+  "status": {
+    "online": "متصل",
+    "offline": "غير متصل",
+    "connecting": "جاري الاتصال...",
+    "simulation": "وضع المحاكاة",
+    "live": "مباشر"
+  },
+  "boat": {
+    "title": "حالة الزورق",
+    "mode": "الوضع",
+    "speed": "السرعة",
+    "heading": "الاتجاه",
+    "mission": "حالة المهمة",
+    "connection": "الاتصال",
+    "auto": "تلقائي",
+    "manual": "يدوي",
+    "idle": "في الانتظار",
+    "tracking": "يتتبع",
+    "returning": "عائد"
+  },
+  "camera": {
+    "title": "بث الكاميرا المباشر",
+    "fullscreen": "ملء الشاشة",
+    "recording": "تسجيل",
+    "no_signal": "لا يوجد إشارة",
+    "connecting": "جاري الاتصال بالكاميرا..."
+  },
+  "ai": {
+    "title": "كشف الذكاء الاصطناعي",
+    "model": "النموذج",
+    "fps": "إطار/ث",
+    "confidence": "الثقة",
+    "target": "فئة الهدف",
+    "tracking": "حالة التتبع",
+    "detected": "تم اكتشاف عدو!",
+    "clear": "المنطقة آمنة"
+  },
+  "power": {
+    "title": "مراقبة الطاقة",
+    "battery": "البطارية",
+    "voltage": "الجهد",
+    "current": "التيار",
+    "solar": "طاقة شمسية",
+    "wind": "طاقة رياح",
+    "hydro": "طاقة مائية",
+    "runtime": "وقت التشغيل المتبقي"
+  },
+  "sensors": {
+    "title": "حساسات البيئة",
+    "wind_speed": "سرعة الريح",
+    "wind_dir": "اتجاه الريح",
+    "water_temp": "درجة حرارة الماء",
+    "ph": "مستوى الحموضة",
+    "pollution": "التلوث",
+    "turbidity": "العكارة"
+  },
+  "control": {
+    "title": "التحكم اليدوي",
+    "forward": "للأمام",
+    "backward": "للخلف",
+    "left": "يسار",
+    "right": "يمين",
+    "stop": "إيقاف",
+    "emergency_stop": "إيقاف طارئ",
+    "speed": "السرعة",
+    "alarm": "إنذار",
+    "lights": "الأضواء"
+  },
+  "notifications": {
+    "title": "الإشعارات",
+    "enemy_detected": "تم رصد سفينة معادية!",
+    "battery_low": "مستوى البطارية حرج!",
+    "esp_offline": "وحدة ESP غير متصلة!",
+    "camera_offline": "انقطع بث الكاميرا!",
+    "mission_complete": "تمت المهمة بنجاح!"
+  },
+  "mission": {
+    "title": "إعداد المهمة",
+    "name": "اسم المهمة",
+    "enemy_color": "لون العدو",
+    "tracking_speed": "سرعة التتبع",
+    "cruise_speed": "سرعة الإبحار",
+    "alarm_duration": "مدة الإنذار",
+    "stop_distance": "مسافة التوقف",
+    "search_radius": "نطاق البحث",
+    "confidence": "دقة الكشف",
+    "start_pos": "موضع البداية",
+    "target_pos": "موضع الهدف",
+    "simulation": "وضع المحاكاة",
+    "save": "حفظ المهمة",
+    "saved": "تم الحفظ!"
+  },
+  "logs": {
+    "title": "سجل الأحداث",
+    "search": "ابحث في السجلات...",
+    "export": "تصدير",
+    "clear": "مسح",
+    "no_logs": "لا توجد أحداث مسجلة بعد"
+  },
+  "settings": {
+    "title": "الإعدادات",
+    "esp_ip": "عنوان IP للـ ESP",
+    "camera_url": "رابط بث الكاميرا",
+    "ai_endpoint": "نقطة نهاية AI",
+    "socket_port": "منفذ Socket",
+    "theme": "المظهر",
+    "language": "اللغة",
+    "auto_connect": "اتصال تلقائي",
+    "dark": "داكن",
+    "light": "فاتح",
+    "system": "تلقائي",
+    "save": "حفظ الإعدادات"
+  }
+}

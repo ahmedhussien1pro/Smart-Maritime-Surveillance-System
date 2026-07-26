@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light theme */
+    --bg-primary: #f0f4f8;
+    --bg-card: #ffffff;
+    --bg-card-hover: #f8fafc;
+    --border: #e2e8f0;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #94a3b8;
+    --accent: #0ea5e9;
+    --accent-glow: rgba(14, 165, 233, 0.2);
+  }
+
+  .dark {
+    /* Dark Military Theme */
+    --bg-primary: #101820;
+    --bg-card: #1D2939;
+    --bg-card-hover: #253347;
+    --border: rgba(0, 255, 136, 0.1);
+    --text-primary: #e2e8f0;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --accent: #00ff88;
+    --accent-glow: rgba(0, 255, 136, 0.15);
+  }
+
+  * {
+    border-color: var(--border);
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.2s ease;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+  }
+
+  [dir='rtl'] body,
+  [lang='ar'] {
+    font-family: 'Cairo', 'Tajawal', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-xl border p-4;
+    background: var(--bg-card);
+    border-color: var(--border);
+  }
+
+  .dark .card {
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.03), inset 0 1px 0 rgba(255,255,255,0.03);
+  }
+
+  .card-glow {
+    @apply card;
+    box-shadow: 0 0 30px var(--accent-glow);
+  }
+
+  .status-dot {
+    @apply inline-block w-2 h-2 rounded-full;
+  }
+
+  .status-dot.online {
+    @apply bg-green-400;
+    box-shadow: 0 0 8px rgba(74, 222, 128, 0.8);
+    animation: pulse 2s infinite;
+  }
+
+  .status-dot.offline {
+    @apply bg-red-500;
+  }
+
+  .btn-primary {
+    @apply px-4 py-2 rounded-lg font-medium text-sm transition-all duration-200;
+    background: var(--accent);
+    color: #101820;
+  }
+
+  .btn-primary:hover {
+    filter: brightness(1.15);
+    box-shadow: 0 0 16px var(--accent-glow);
+  }
+
+  .btn-danger {
+    @apply px-4 py-2 rounded-lg font-medium text-sm bg-red-600 text-white transition-all duration-200 hover:bg-red-500;
+  }
+
+  .btn-ghost {
+    @apply px-4 py-2 rounded-lg font-medium text-sm transition-all duration-200;
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+  }
+
+  .btn-ghost:hover {
+    background: var(--bg-card-hover);
+    color: var(--text-primary);
+  }
+
+  .label {
+    @apply text-xs font-medium uppercase tracking-wider;
+    color: var(--text-muted);
+  }
+
+  .value-lg {
+    @apply text-2xl font-bold;
+    color: var(--text-primary);
+  }
+
+  /* Scrollbar Styling */
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { @apply rounded-full bg-gray-600; }
+  .dark ::-webkit-scrollbar-thumb { background: rgba(0, 255, 136, 0.2); }
+
+  /* Radar grid background */
+  .radar-bg {
+    background-image: linear-gradient(rgba(0,255,136,0.04) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(0,255,136,0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+}

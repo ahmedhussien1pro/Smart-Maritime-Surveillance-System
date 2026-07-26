@@ -1,0 +1,121 @@
+{
+  "nav": {
+    "dashboard": "Dashboard",
+    "mission": "Mission Config",
+    "logs": "Event Logs",
+    "settings": "Settings"
+  },
+  "status": {
+    "online": "Online",
+    "offline": "Offline",
+    "connecting": "Connecting...",
+    "simulation": "Simulation Mode",
+    "live": "Live"
+  },
+  "boat": {
+    "title": "Boat Status",
+    "mode": "Mode",
+    "speed": "Speed",
+    "heading": "Heading",
+    "mission": "Mission State",
+    "connection": "Connection",
+    "auto": "AUTO",
+    "manual": "MANUAL",
+    "idle": "Idle",
+    "tracking": "Tracking",
+    "returning": "Returning"
+  },
+  "camera": {
+    "title": "Live Camera Feed",
+    "fullscreen": "Fullscreen",
+    "recording": "REC",
+    "no_signal": "No Signal",
+    "connecting": "Connecting to camera..."
+  },
+  "ai": {
+    "title": "AI Detection",
+    "model": "Model",
+    "fps": "FPS",
+    "confidence": "Confidence",
+    "target": "Target Class",
+    "tracking": "Tracking State",
+    "detected": "Enemy Detected!",
+    "clear": "Area Clear"
+  },
+  "power": {
+    "title": "Power Monitor",
+    "battery": "Battery",
+    "voltage": "Voltage",
+    "current": "Current",
+    "solar": "Solar",
+    "wind": "Wind",
+    "hydro": "Hydro",
+    "runtime": "Est. Runtime"
+  },
+  "sensors": {
+    "title": "Environmental Sensors",
+    "wind_speed": "Wind Speed",
+    "wind_dir": "Wind Direction",
+    "water_temp": "Water Temp",
+    "ph": "pH Level",
+    "pollution": "Pollution",
+    "turbidity": "Turbidity"
+  },
+  "control": {
+    "title": "Manual Control",
+    "forward": "Forward",
+    "backward": "Backward",
+    "left": "Left",
+    "right": "Right",
+    "stop": "Stop",
+    "emergency_stop": "EMERGENCY STOP",
+    "speed": "Speed",
+    "alarm": "Alarm",
+    "lights": "Lights"
+  },
+  "notifications": {
+    "title": "Notifications",
+    "enemy_detected": "Enemy vessel detected!",
+    "battery_low": "Battery critically low!",
+    "esp_offline": "ESP module offline!",
+    "camera_offline": "Camera feed lost!",
+    "mission_complete": "Mission completed successfully!"
+  },
+  "mission": {
+    "title": "Mission Configuration",
+    "name": "Mission Name",
+    "enemy_color": "Enemy Color",
+    "tracking_speed": "Tracking Speed",
+    "cruise_speed": "Cruise Speed",
+    "alarm_duration": "Alarm Duration",
+    "stop_distance": "Stop Distance",
+    "search_radius": "Search Radius",
+    "confidence": "Detection Confidence",
+    "start_pos": "Start Position",
+    "target_pos": "Target Position",
+    "simulation": "Simulation Mode",
+    "save": "Save Mission",
+    "saved": "Mission Saved!"
+  },
+  "logs": {
+    "title": "Event Logs",
+    "search": "Search logs...",
+    "export": "Export",
+    "clear": "Clear",
+    "no_logs": "No events recorded yet"
+  },
+  "settings": {
+    "title": "Settings",
+    "esp_ip": "ESP IP Address",
+    "camera_url": "Camera Stream URL",
+    "ai_endpoint": "AI Endpoint",
+    "socket_port": "Socket Port",
+    "theme": "Theme",
+    "language": "Language",
+    "auto_connect": "Auto Connect",
+    "dark": "Dark",
+    "light": "Light",
+    "system": "System",
+    "save": "Save Settings"
+  }
+}
