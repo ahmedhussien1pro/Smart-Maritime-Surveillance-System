@@ -1,58 +1,64 @@
 'use client';
 
 import { useLocale } from '@/components/providers/LocaleProvider';
-import { Zap, Battery, Sun, Wind, Waves } from 'lucide-react';
-import type { SimData } from '@/hooks/useSimulation';
+import { BatteryCharging, Sun, Wind, Waves, Zap } from 'lucide-react';
+import type { BoatState } from '@/hooks/useSocket';
 
-interface Props { data: SimData | null; }
+interface Props {
+  data: BoatState | null;
+}
 
 export function PowerMonitorCard({ data }: Props) {
   const { t } = useLocale();
-  const battery = data?.battery ?? 0;
-  const batteryColor = battery > 50 ? '#30d158' : battery > 20 ? '#ff9f0a' : '#ff3b3b';
+  const batteryPct = Math.round(data?.battery ?? 88);
 
   return (
     <div className="card flex flex-col gap-3">
-      <div className="flex items-center gap-2">
-        <Zap className="w-4 h-4" style={{ color: 'var(--accent)' }} />
-        <span className="text-sm font-semibold" style={{ color: 'var(--text-primary)' }}>{t('power.title')}</span>
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <Zap className="w-4 h-4 text-amber-500 flex-shrink-0" />
+          <span className="text-sm font-bold tracking-wide" style={{ color: 'var(--text-primary)' }}>
+            {t('power.title')}
+          </span>
+        </div>
+        <span className="text-xs font-mono font-bold text-amber-600 dark:text-amber-400">
+          {data?.voltage ?? 12.4} {t('power.volts')}
+        </span>
       </div>
 
-      {/* Battery Bar */}
-      <div>
-        <div className="flex items-center justify-between mb-1.5">
-          <div className="flex items-center gap-1">
-            <Battery className="w-4 h-4" style={{ color: batteryColor }} />
-            <span className="label">{t('power.battery')}</span>
-          </div>
-          <span className="text-lg font-bold" style={{ color: batteryColor }}>{battery}%</span>
+      {/* Main Battery Gauge */}
+      <div className="p-3 rounded-xl border flex flex-col gap-2" style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)' }}>
+        <div className="flex justify-between items-center text-xs font-bold font-mono">
+          <span className="flex items-center gap-1.5 font-bold" style={{ color: 'var(--text-secondary)' }}>
+            <BatteryCharging className="w-4 h-4 text-emerald-500 flex-shrink-0" />
+            {t('power.battery')}
+          </span>
+          <span className="text-emerald-600 dark:text-emerald-400 text-sm font-extrabold">{batteryPct}%</span>
         </div>
-        <div className="h-2 rounded-full" style={{ background: 'var(--bg-primary)' }}>
+        <div className="w-full h-2.5 rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden p-0.5 border border-slate-300 dark:border-slate-700">
           <div
-            className="h-2 rounded-full transition-all duration-1000"
-            style={{ width: `${battery}%`, background: batteryColor, boxShadow: `0 0 8px ${batteryColor}60` }}
+            className="h-full rounded-full transition-all duration-500 bg-gradient-to-r from-emerald-500 to-cyan-400 shadow-md shadow-emerald-500/50"
+            style={{ width: `${batteryPct}%` }}
           />
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-2">
-        <PowerSource icon={<Sun className="w-3.5 h-3.5 text-yellow-400" />} label={t('power.solar')} value={`${data?.solar ?? 0}W`} />
-        <PowerSource icon={<Wind className="w-3.5 h-3.5 text-blue-400" />} label={t('power.wind')} value={`${data?.wind ?? 0}W`} />
-        <PowerSource icon={<Waves className="w-3.5 h-3.5 text-cyan-400" />} label={t('power.hydro')} value={`${data?.hydro ?? 0}W`} />
-        <PowerSource icon={<Zap className="w-3.5 h-3.5" style={{ color: 'var(--accent)' }} />} label={t('power.voltage')} value={`${data?.voltage ?? 0}V`} />
+      {/* Renewable Sources Grid */}
+      <div className="grid grid-cols-3 gap-2">
+        <PowerSourceItem label={t('power.solar')} val={`${data?.solar ?? 65} ${t('power.watts')}`} icon={<Sun className="w-3.5 h-3.5 text-amber-500" />} />
+        <PowerSourceItem label={t('power.wind')} val={`${data?.wind ?? 18} ${t('power.watts')}`} icon={<Wind className="w-3.5 h-3.5 text-sky-500" />} />
+        <PowerSourceItem label={t('power.hydro')} val={`${data?.hydro ?? 12} ${t('power.watts')}`} icon={<Waves className="w-3.5 h-3.5 text-teal-500" />} />
       </div>
     </div>
   );
 }
 
-function PowerSource({ icon, label, value }: { icon: React.ReactNode; label: string; value: string }) {
+function PowerSourceItem({ label, val, icon }: { label: string; val: string; icon: React.ReactNode }) {
   return (
-    <div className="flex items-center gap-2 rounded-lg p-2" style={{ background: 'var(--bg-primary)' }}>
+    <div className="p-2.5 rounded-lg border text-center flex flex-col items-center gap-1" style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)' }}>
       {icon}
-      <div>
-        <p className="label" style={{ fontSize: '10px' }}>{label}</p>
-        <p className="text-xs font-bold" style={{ color: 'var(--text-primary)' }}>{value}</p>
-      </div>
+      <span className="text-[10px] font-bold text-slate-700 dark:text-slate-300 uppercase">{label}</span>
+      <span className="text-xs font-extrabold font-mono text-slate-900 dark:text-slate-100">{val}</span>
     </div>
   );
 }

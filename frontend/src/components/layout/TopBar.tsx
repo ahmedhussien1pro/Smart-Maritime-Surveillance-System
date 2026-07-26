@@ -10,28 +10,30 @@ export function TopBar() {
 
   return (
     <header
-      className="flex items-center justify-between px-6 py-3 border-b"
+      className="flex items-center justify-between px-4 md:px-6 py-3 border-b flex-wrap gap-2"
       style={{ background: 'var(--bg-card)', borderColor: 'var(--border)' }}
     >
-      {/* Logo */}
-      <div className={`flex items-center gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
-        <div className="flex items-center justify-center w-9 h-9 rounded-lg" style={{ background: 'var(--accent-glow)', border: '1px solid var(--accent)' }}>
+      {/* Brand Title */}
+      <div className="flex items-center gap-3">
+        <div className="flex items-center justify-center w-9 h-9 rounded-xl border flex-shrink-0" style={{ background: 'var(--accent-glow)', borderColor: 'var(--accent)' }}>
           <Anchor className="w-5 h-5" style={{ color: 'var(--accent)' }} />
         </div>
         <div>
-          <h1 className="text-sm font-bold tracking-wide" style={{ color: 'var(--text-primary)' }}>
-            {isRTL ? 'نظام المراقبة البحرية' : 'Maritime Surveillance'}
+          <h1 className="text-sm font-extrabold tracking-wide" style={{ color: 'var(--text-primary)' }}>
+            {isRTL ? 'نظام المراقبة البحرية الذكي' : 'Smart Maritime Surveillance'}
           </h1>
-          <p className="text-xs" style={{ color: 'var(--text-muted)' }}>
-            {isRTL ? 'لوحة القيادة البحرية' : 'Naval Command & Control'}
+          <p className="text-[11px] font-medium" style={{ color: 'var(--text-muted)' }}>
+            {isRTL ? 'لوحة القيادة والتحكم البحري' : 'Naval Command & Control Center'}
           </p>
         </div>
       </div>
 
-      {/* Status Indicator */}
-      <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg" style={{ background: 'var(--bg-primary)' }}>
-        <Radio className="w-3.5 h-3.5 text-green-400" />
-        <span className="text-xs font-medium text-green-400">{t('status.simulation')}</span>
+      {/* Status Badge */}
+      <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl border" style={{ background: 'var(--bg-primary)', borderColor: 'var(--border)' }}>
+        <Radio className="w-3.5 h-3.5 text-emerald-400 animate-pulse flex-shrink-0" />
+        <span className="text-xs font-bold text-emerald-400 font-mono">
+          {t('status.simulation')}
+        </span>
         <span className="status-dot online" />
       </div>
 
@@ -40,10 +42,10 @@ export function TopBar() {
         {/* Language Toggle */}
         <button
           onClick={() => setLocale(locale === 'en' ? 'ar' : 'en')}
-          className="btn-ghost flex items-center gap-1.5 text-xs"
+          className="btn-ghost flex items-center gap-1.5 text-xs font-bold"
           title="Toggle Language"
         >
-          <Globe className="w-4 h-4" />
+          <Globe className="w-4 h-4 text-emerald-400" />
           <span>{locale === 'en' ? 'العربية' : 'English'}</span>
         </button>
 
@@ -53,10 +55,11 @@ export function TopBar() {
           className="btn-ghost p-2"
           title="Toggle Theme"
         >
-          {theme === 'dark'
-            ? <Sun className="w-4 h-4" />
-            : <Moon className="w-4 h-4" />
-          }
+          {theme === 'dark' ? (
+            <Sun className="w-4 h-4 text-amber-400" />
+          ) : (
+            <Moon className="w-4 h-4 text-indigo-400" />
+          )}
         </button>
       </div>
     </header>
