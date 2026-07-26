@@ -1,9 +1,7 @@
-# ⚡ مخطط تصميم لوحة الدائرة الإلكترونية والتوصيلات (USV Hardware PCB & Wiring Architecture)
-### 🎖️ كلية ضباط الاحتياط - دفعة 170
-
+# مخطط تصميم لوحة الدائرة الإلكترونية والتوصيلات (USV Hardware PCB & Wiring Architecture)
 ---
 
-## 📐 1. المخطط الهندسي العام للنظام (Block Diagram)
+##  1. المخطط الهندسي العام للنظام (Block Diagram)
 
 ```mermaid
 graph TD
@@ -42,7 +40,7 @@ graph TD
 
 ---
 
-## 📌 2. جدول التوصيلات الدقيق للأرجل (ESP32 Pinout Mapping Table)
+##  2. جدول التوصيلات الدقيق للأرجل (ESP32 Pinout Mapping Table)
 
 | رقم الطرف (GPIO) | المكون الإلكتروني المرتبط | وظيفة الطرف (Function) | النمط (Mode) | ملاحظات هندسية |
 | :--- | :--- | :--- | :--- | :--- |
@@ -61,7 +59,7 @@ graph TD
 
 ---
 
-## 🔋 3. مخطط توزيع خطوط التغذية (Power Distribution Architecture)
+## 3. مخطط توزيع خطوط التغذية (Power Distribution Architecture)
 
 1. **خط الجهد العالي (12V Main Power Bus):**
    * مصدر التغذية: بطارية 12V LiFePO4 أو LiPo بسعة 5000mAh فأكثر.
@@ -76,7 +74,7 @@ graph TD
 
 ---
 
-## 🛠️ 4. المكونات المطلوب شراؤها وتجميعها (Bill of Materials - BOM)
+##  4. المكونات المطلوب شراؤها وتجميعها (Bill of Materials - BOM)
 
 1. **متحكم رئيسي:** ESP32 NodeMCU Development Board (30-Pin Version).
 2. **كاميرا وبث:** ESP32-CAM Module + Antenna.
